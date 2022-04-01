@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'dense-analysis/ale'
 	Plug 'preservim/nerdtree'
 	Plug 'tpope/vim-fugitive'
+	Plug 'cespare/vim-toml', { 'branch': 'main' }
 call plug#end()
 
 " }}}
@@ -90,3 +91,4 @@ set statusline+=\ ascii:\ (%b\ \|\ 0x%B)\ pos:\ (%l,\ %c)
 set laststatus=2
 
 " }}}
+ 
