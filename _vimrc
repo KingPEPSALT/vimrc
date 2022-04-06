@@ -5,8 +5,19 @@ call plug#begin('~/.vim/plugged')
 	Plug 'dense-analysis/ale'
 	Plug 'preservim/nerdtree'
 	Plug 'tpope/vim-fugitive'
+	Plug 'ryanoasis/vim-devicons'
 	Plug 'cespare/vim-toml', { 'branch': 'main' }
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
+
+set background=dark
+colorscheme PaperColor
+
+" vim-airline config
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'violet' 
 
 " }}}
 
@@ -28,6 +39,9 @@ noremap <C-left> <C-w><
 inoremap jj <esc>
 nnoremap Y y$
 
+" insert new line without entering insert mode
+nnoremap o o<Esc>
+nnoremap O O<Esc>
 
 " nerdtree maps
 nnoremap <F3> :NERDTreeToggle<Cr>
@@ -48,7 +62,7 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax on
-
+:set omnifunc=jedi#completions
 set number
 set backspace=indent,eol,start
 set encoding=utf-8
@@ -82,11 +96,6 @@ let NERDTreeShowHidden = 1
 
 " STATUS LINE {{{
 " Status bar code goes here
-
-set statusline=
-set statusline+=\ %F\ %M\ %Y\ %R
-set statusline+=%=
-set statusline+=\ ascii:\ (%b\ \|\ 0x%B)\ pos:\ (%l,\ %c)
 
 set laststatus=2
 
